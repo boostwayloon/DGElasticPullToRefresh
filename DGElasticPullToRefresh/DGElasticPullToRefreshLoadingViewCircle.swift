@@ -31,11 +31,11 @@ import UIKit
 
 public extension CGFloat {
     
-    public func toRadians() -> CGFloat {
+    func toRadians() -> CGFloat {
         return (self * CGFloat(Double.pi)) / 180.0
     }
     
-    public func toDegrees() -> CGFloat {
+    func toDegrees() -> CGFloat {
         return self * 180.0 / CGFloat(Double.pi)
     }
     
@@ -114,7 +114,7 @@ open class DGElasticPullToRefreshLoadingViewCircle: DGElasticPullToRefreshLoadin
     }
     
     fileprivate func currentDegree() -> CGFloat {
-        return shapeLayer.value(forKeyPath: "transform.rotation.z") as! CGFloat
+        return CGFloat((shapeLayer.value(forKeyPath: "transform.rotation.z") as! NSNumber).floatValue)
     }
     
     override open func tintColorDidChange() {
